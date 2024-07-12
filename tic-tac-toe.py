@@ -2,7 +2,50 @@
 import tkinter #* tk-interface (graphical user interface library)
 
 def set_tile(row,column):
-    pass
+    global current_player
+
+    if(game_over):
+        return
+
+    if board[row][column]["text"] != "":
+        #*already taken spot
+        return
+    
+    board[row][column]["text"] = current_player #*mark the board
+
+    if current_player == playerO: #*switch player
+        current_player = playerX
+    else:
+        current_player = playerO
+
+    label["text"] = current_player+"'s turn"
+
+    check_winner()
+
+def check_winner():
+    global turns, game_over
+    turns +=1
+
+    #horizontally check 3 rows
+    for row in range(3):
+        if (board[row][0]["text"] == board[row][1]["text"] == board[row][2]["text"]
+           and board[row][0]["text"] != ""):
+             label.config(text=board[row][0]["text"]+ " is the winner", foreground=color_gray) 
+             for column in range(3):
+                 board[row][column].config(foreground=color_gray, background= color_light_turquoise)
+             game_over = True
+             return
+        
+    #vertically check 3 columns 
+    for column in range(3):
+        if (board[0][column]["text"] == board[1][column]["text"] == board[2][column]["text"]
+            and board[0][column]["text"]!=""):
+            label.config(text=board[0][column]["text"]+ " is the winner", foreground=color_gray)
+            for row in range(3):
+                 board[row][column].config(foreground=color_gray, background= color_light_turquoise)
+            game_over = True
+            return0
+
 
 def new_game():
     pass
@@ -20,6 +63,9 @@ color_yellow ="#fac608"
 color_gray ="#343434"
 color_light_turquoise ="#14bdac"
 color_turquoise ="#14ae9f"
+
+turns =0
+game_over = False 
 
 #* window setup 
 window = tkinter.Tk()
