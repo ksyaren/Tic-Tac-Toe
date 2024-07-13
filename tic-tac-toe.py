@@ -44,7 +44,32 @@ def check_winner():
             for row in range(3):
                  board[row][column].config(foreground=color_gray, background= color_light_turquoise)
             game_over = True
-            return0
+            return
+
+    #diagonally check 2 lines
+    if ( board[0][0]["text"] == board[1][1]["text"] == board[2][2]["text"]
+       and board[0][0]["text"]!=""):
+         label.config(text=board[0][0]["text"]+ " is the winner", foreground=color_gray)
+         for i in range(3):
+             board[i][i].config(foreground =color_gray, background=color_light_turquoise)
+         game_over
+         return
+    
+    if (board[0][2]["text"] == board[1][1]["text"] == board[2][0]["text"]
+        and board[0][2]["text"] !=""):
+        label.config(text=board[0][2]["text"]+ " is the winner", foreground=color_gray)
+        board[0][2].config(foreground =color_gray, background=color_light_turquoise)
+        board[1][1].config(foreground =color_gray, background=color_light_turquoise)
+        board[2][0].config(foreground =color_gray, background=color_light_turquoise)
+        game_over
+        return
+
+    #tie (draw)
+    if(turns ==9):
+        game_over = True
+        label.config(text="It's a draw", foreground=color_gray)
+       
+
 
 
 def new_game():
