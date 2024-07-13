@@ -93,10 +93,10 @@ board = [[0, 0, 0],
          [0, 0, 0],
          [0, 0, 0]]
 
-color_yellow ="#fac608"
-color_gray ="#343434"
-color_light_turquoise ="#14bdac"
-color_turquoise ="#14ae9f"
+color_yellow ="#f4f2ef"
+color_gray ="#e68c3a"
+color_light_turquoise ="#94b6ef"
+color_turquoise ="#213e60"
 
 turns =0
 game_over = False 
