@@ -73,7 +73,16 @@ def check_winner():
 
 
 def new_game():
-    pass
+    global turns, game_over
+    turns = 0
+    game_over = False
+
+    label.config(text=current_player+"'s turn" , foreground=color_yellow, background=color_turquoise) 
+
+    for row in range(3):
+        for column in range(3):
+            board[row][column].config(text="" ,foreground= color_yellow, background=color_turquoise)
+
 
 #* game setup
 
