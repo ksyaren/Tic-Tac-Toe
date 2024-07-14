@@ -14,4 +14,4 @@
 
 ## O IS THE WINNER!
 
-![](https://github.com/ksyaren/Tic-Tac-Toe/blob/main/0_winner.png)
+![](https://github.com/ksyaren/Tic-Tac-Toe/blob/main/o_winner.png)
