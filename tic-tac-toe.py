@@ -29,7 +29,7 @@ def check_winner():
     for row in range(3):
         if (board[row][0]["text"] == board[row][1]["text"] == board[row][2]["text"]
            and board[row][0]["text"] != ""):
-             label.config(text=board[row][0]["text"] + " is the winner", foreground=color_gray) 
+             label.config(text=board[row][0]["text"] + " winner", foreground=color_gray) 
              for column in range(3):
                  board[row][column].config(foreground=color_gray, background=color_light_turquoise)
              game_over = True
@@ -38,7 +38,7 @@ def check_winner():
     for column in range(3):
         if (board[0][column]["text"] == board[1][column]["text"] == board[2][column]["text"]
             and board[0][column]["text"] != ""):
-            label.config(text=board[0][column]["text"] + " is the winner", foreground=color_gray)
+            label.config(text=board[0][column]["text"] + " winner", foreground=color_gray)
             for row in range(3):
                  board[row][column].config(foreground=color_gray, background=color_light_turquoise)
             game_over = True
